@@ -76,7 +76,6 @@ def process_video(input_path, output_path):
     if frame_id == 0:
         raise RuntimeError("Видео не содержит кадров")
 
-    # путь к ffmpeg (узнай через `which ffmpeg`)
     ffmpeg_path = "/usr/bin/ffmpeg"
 
     cmd = [
@@ -84,7 +83,7 @@ def process_video(input_path, output_path):
         "-y",
         "-framerate", str(int(fps)),
         "-i", f"{frames_dir}/%06d.png",
-        "-c:v", "mpeg4",  # ← ВАЖНО
+        "-c:v", "mpeg4",
         "-q:v", "5",
         output_path
     ]
