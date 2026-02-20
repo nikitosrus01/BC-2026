@@ -39,11 +39,6 @@ def index():
 
 
 def process_video(input_path, output_path):
-    import os
-    import shutil
-    import subprocess
-    import cv2
-
     frames_dir = "temp_frames"
     if os.path.exists(frames_dir):
         shutil.rmtree(frames_dir)
